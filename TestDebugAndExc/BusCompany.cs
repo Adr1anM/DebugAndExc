@@ -30,6 +30,7 @@ namespace TestDebugAndExc
             catch(InvalidDriverAgeException ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
+                throw new Exception("An error occurred while hiring a driver.", ex);
             }
             catch(LicenceNotFoundException ex)
             {

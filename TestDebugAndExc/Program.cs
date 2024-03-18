@@ -12,7 +12,14 @@ Bus bus2 = new Bus { Id = 112, Driver = driver2 , Year = 2014 };
 Bus bus3 = new Bus { Id = 113, Driver = driver3 , Year = 2015 };
 
 BusCompany comp1 = new BusCompany("ARTEC");
-comp1.HireDriver(driver, bus);
+try 
+{
+    comp1.HireDriver(driver, bus);
+}
+catch(Exception ex)
+{
+    Console.WriteLine($"Err: {ex.Message}");
+}
 comp1.HireDriver(driver2, bus2);
 comp1.HireDriver(driver3, bus3);
 
